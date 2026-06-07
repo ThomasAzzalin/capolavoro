@@ -1,0 +1,280 @@
+main {
+  width: 640px;
+  max-width: 100%;
+  margin: 80px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  color: var(--text);
+  font-size: 15px;
+}
+
+.drop-zone {
+  border: 1.5px dashed var(--border);
+  border-radius: 6px;
+  padding: 56px 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.15s, background 0.15s;
+  user-select: none;
+}
+
+.drop-zone:hover,
+.drop-zone.dragging {
+  border-color: var(--text-h);
+  background: var(--code-bg);
+}
+
+.drop-icon {
+  font-size: 28px;
+  line-height: 1;
+  color: var(--text-h);
+}
+
+.drop-zone p {
+  font-size: 15px;
+  color: var(--text);
+  margin: 0;
+}
+
+.link {
+  color: var(--text-h);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.result-box {
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result-box.error {
+  border-color: #e57373;
+}
+
+.result-box.success {
+  border-color: #81c784;
+}
+
+.result-box p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.result-box .hint {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.result-box button {
+  align-self: flex-start;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  padding: 7px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text-h);
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.result-box button:hover {
+  border-color: var(--text-h);
+  background: var(--code-bg);
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard-page {
+  width: 1100px;
+  max-width: 100%;
+  margin: 40px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  letter-spacing: -0.4px;
+}
+
+.dashboard-header p {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.dashboard-header button {
+  flex-shrink: 0;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  padding: 7px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text-h);
+  font-family: inherit;
+}
+
+.dashboard-header button:hover {
+  border-color: var(--text-h);
+  background: var(--code-bg);
+}
+
+.year-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.year-label {
+  font-size: 14px;
+  color: var(--text);
+  margin-right: 4px;
+}
+
+.year-selector button {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.year-selector button:hover {
+  border-color: var(--text-h);
+}
+
+.year-selector button.active {
+  border-color: var(--text-h);
+  background: var(--text-h);
+  color: var(--bg);
+}
+
+/* numero totale messaggi */
+.total-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.total-number {
+  font-size: 44px;
+  font-weight: 600;
+  color: var(--text-h);
+  line-height: 1;
+}
+
+.total-label {
+  font-size: 14px;
+  color: var(--text);
+  margin-top: 8px;
+}
+
+/* griglia delle card */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 0;
+}
+
+.card-wide {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.card-body {
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Heatmap ---------- */
+.heatmap {
+  display: grid;
+  gap: 3px;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.heatmap-corner {
+  min-height: 1px;
+}
+
+.heatmap-col-label {
+  font-size: 11px;
+  color: var(--text);
+  text-align: center;
+}
+
+.heatmap-row-label {
+  font-size: 12px;
+  color: var(--text-h);
+  padding-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.heatmap-cell {
+  aspect-ratio: 1 / 1;
+  min-height: 14px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
