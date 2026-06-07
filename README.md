@@ -57,7 +57,7 @@ Grafico a stella dei messaggi per mese e heatmap di attività:
 Dopo aver clonato il repository:
 
 ```bash
-git clone <url-del-repository>
+git clone https://github.com/ThomasAzzalin/capolavoro
 cd capolavoro
 ```
 
